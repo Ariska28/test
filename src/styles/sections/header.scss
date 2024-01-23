@@ -1,0 +1,204 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: px-to-vw(16);
+    padding: px-to-vw(60)  px-to-vw(40);
+    position: relative;
+    overflow: hidden;
+  
+    @include media-down(lg) {
+      padding: px-to-vw(20)  px-to-vw(30);
+    }
+  
+    input {
+        display: block;
+        width: 40px;
+        height: 40px;     
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translate(0%, -50%);
+    }
+  
+    input:checked ~ .header__burger {
+      span {
+        opacity: 1;
+        transform: rotate(45deg);
+        background: #232323;
+        top: 50%;
+      }
+    }
+  
+    input:checked ~ .header__burger {
+      span:nth-last-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  
+    input:checked ~ .header__nav {
+      transform: none;
+    }
+  }
+  
+  .header__nav {
+    display: flex;
+    align-self: center;
+  
+    @include media-down(lg) {
+      flex-direction: column;
+      padding: px-to-vw(50);
+      
+      background: $c-white;
+      list-style-type: none;
+      transform-origin: 0% 0%;
+      transform: translate(-100%, 0);
+      width: 100%;
+      height: 100vh;
+      z-index: 100;
+      position: fixed;
+      left: 0;
+      top: 64px;
+      
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+  
+    @include media-down(lg) {
+      padding: px-to-vw(20);
+    }
+  }
+  
+  .header__burger {
+    display: none;
+  
+    @include media-down(lg) {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: relative;
+  
+      span {
+        display: block;
+        width: 40px;
+        height: 4px;
+        position: absolute;
+        
+        background: $c-text;
+        border-radius: 3px;
+        z-index: 1;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+  
+        &:first-child {
+          top: 30%;
+        }
+                    
+        &:nth-child(2) {
+          top: 60%;
+        }
+      }
+    }
+  
+  }
+  .header__logo-wr {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__nav-list {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+  
+    &:first-child {
+      margin-right: px-to-vw(310);
+    }
+  
+    @include media-down(lg) {
+      flex-direction: column;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  
+  .header__nav-list__item {
+    margin-right: px-to-vw(25);
+    padding-right: px-to-vw(15);
+    position: relative;
+  
+    a {
+      cursor: pointer;
+      color: inherit;
+    }
+  
+    & > .header__nav-sublist::after {
+      content: '\203a';
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform:rotate(90deg);
+      transition: transform 0.2s ease;
+    }
+  
+    &:hover > .header__nav-sublist::after {
+      transform:rotate(270deg);
+    }
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  
+    @include media-down(lg) {
+      padding: 10px;
+      font-size: px-to-vw(30);
+      text-align: center;
+      margin-right: 0;
+    }
+  }
+  
+  .header__nav-registration {
+    display: flex;
+    margin-left: px-to-vw(140);
+    background-color: $c-gray;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: px-to-vw(6);
+  
+    @include media-down(lg) {
+      flex-direction: column;
+      margin:px-to-vw(20) auto;
+    }
+  
+    @include media-down(sm) {
+      width: 100%;
+      margin: px-to-vw(20) 0;
+    }
+  }
+  
+  .header__nav-registration-btn {
+    padding: px-to-vw(13) px-to-vw(25);
+    font-weight: 500;
+    color: $c-text;
+  
+    &--color {
+      background-color: $c-primary;
+      color: $c-white;
+      border-radius: 10px;
+    }
+  }
+  
+  .header__nav-language {
+    background-color: transparent;
+    border: none;
+    color: $c-gray-dark;
+    font-size: px-to-vw(16);
+    margin-left: px-to-vw(66);
+  
+    @include media-down(md) {
+      margin-left: 0;
+    }
+  }
+  

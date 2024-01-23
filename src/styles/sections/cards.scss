@@ -1,0 +1,252 @@
+.cards__container {
+  margin: auto;
+  max-width: px-to-vw(1780);
+  padding: px-to-vw(100) px-to-vw(10);
+  position: relative;
+  min-height: 100vh;
+
+  @include media-down(sm) {
+      padding-top: px-to-vw(40);
+  }
+}
+
+.cards__item-content {
+  width: 50%;
+  margin-right: px-to-vw(30);
+
+  @include media-down(sm) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: px-to-vw(30);
+
+  }
+}
+
+.cards__item-picture {
+  width: 47%;
+  display: flex;
+  justify-content: end;
+
+  img {
+      object-fit: contain;
+  }
+
+  @include media-down(md) {
+      width: 100%;
+  }
+}
+
+.cards__item-content__lable {
+  display: block;
+  color: $c-accent;
+  margin-bottom: px-to-vw(80);
+
+  @include media-down(sm) {
+      margin-bottom: px-to-vw(25);
+  }
+}
+
+.cards__item-content__title {
+  font-size: px-to-vw(50);
+  margin-bottom: px-to-vw(40);
+
+  @include media-down(sm) {
+    font-size: px-to-vw(28);
+    margin-bottom: px-to-vw(25);
+  }
+}
+  
+.cards__item-content__list {
+  list-style-position: inside;
+
+  @include media-down(sm) {
+    display: none;
+  }
+}
+  
+.cards__item-content__mobile {
+  display: none;
+
+  @include media-down(sm) {
+    display: block;
+  }
+}
+  
+.cards__item-content__mobile-text {
+  font-size: px-to-vw(16);
+  opacity: 0.8;
+  margin-bottom: px-to-vw(14);
+}
+  
+.cards__item-content__mobile-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $c-primary;
+  width: 100%;
+  padding: px-to-vw(20);
+  border-radius: 10px;
+  font-size: px-to-vw(16);
+  color: $c-white;
+
+  img {
+    height: 14px;
+    margin-left: 9px;
+  }
+}
+  
+.cards__item-content__list-item {
+  font-size: px-to-vw(28);
+  opacity: 0.8;
+  margin-bottom: px-to-vw(14);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+  
+.cards__item  { 
+  padding-top: px-to-vw(50);
+  margin-top: px-to-vw(50);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all 0.2 ease-in-out;
+  
+  &:nth-child(1) {
+    margin-top: 0;
+
+    .cards__item-pagination__item {
+      &:nth-child(1) {
+        outline: 1px solid $c-accent;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    .cards__item-pagination__item {
+      &:nth-child(2) {
+        outline: 1px solid $c-accent;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .cards__item-pagination__item {
+      &:nth-child(3) {
+        outline: 1px solid $c-accent;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  @include media-down(lg) {
+    position: static;
+    padding-top: 0;
+  }
+
+  @include media-down(sm) { 
+    margin-top: px-to-vw(23);
+  }
+}
+
+.cards__item-body  { 
+  position: relative;
+  background-color: $c-text;
+  border-radius: 30px;
+  padding: px-to-vw(80);
+  display: flex;
+  justify-content: space-between;
+  color: $c-white;
+  max-height: calc(100vh - 130px);
+  min-height: 570px;
+  will-change: transform, opacity, box-shadow, border, z-index;
+  transition:  0.5s ease-in-out;
+
+  @include media-down(sm) {
+    max-height: 100%;
+    padding: 42px 30px;
+    margin-bottom: 30px;
+    flex-direction: column;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.cards__item-pagination {
+  position: absolute;
+  right: px-to-vw(35);
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  @include media-down(md) {
+    display: none;
+  }
+}
+
+.cards__item-pagination__item {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $c-accent;
+  margin-bottom: px-to-vw(22);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cards__label {
+  width: px-to-vw(160);
+  height: px-to-vw(160);
+  background-color: $c-accent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+  @include media-down(sm) {
+    width: px-to-vw(74);
+    height: px-to-vw(74);
+  }
+}
+
+.cards__label-circle {
+  display: block;
+  overflow: visible;
+  width: px-to-vw(110);
+  font-size: 16px;
+  fill: $c-text;
+
+  path {
+    fill: none;
+  }
+
+  @include media-down(sm) {
+    font-size: 15px;
+    width: px-to-vw(50);
+  }
+}
+
+.cards__label-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  @include media-down(md) {
+    width: 10px;
+  }
+}
