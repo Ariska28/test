@@ -168,8 +168,8 @@
 
   @include media-down(sm) {
     max-height: 100%;
-    padding: 42px 30px;
-    margin-bottom: 30px;
+    padding: px-to-vw(42) px-to-vw(30);
+    margin-bottom: px-to-vw(30);
     flex-direction: column;
 
     &:last-child {

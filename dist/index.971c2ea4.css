@@ -476,10 +476,10 @@ button, a {
 
 @media (width <= 767px) {
   .cards__item-body {
+    padding: calc(42 * var(--fz)) calc(30 * var(--fz));
+    margin-bottom: calc(30 * var(--fz));
     flex-direction: column;
     max-height: 100%;
-    margin-bottom: 30px;
-    padding: 42px 30px;
   }
 
   .cards__item-body:last-child {

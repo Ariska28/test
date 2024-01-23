@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function appearElemntsByOrder() {
   const tl = gsap.timeline({});
-  const headerEffects = { y: -100, duration: 0.8};
+  const headerEffects = { y: -150, duration: 0.8};
 
   tl.from("[data-header-logo]", headerEffects)
     .from("[data-header-nav1]",headerEffects)

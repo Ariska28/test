@@ -708,7 +708,7 @@ var _scrollTrigger = require("gsap/ScrollTrigger");
 function appearElemntsByOrder() {
     const tl = (0, _gsap.gsap).timeline({});
     const headerEffects = {
-        y: -100,
+        y: -150,
         duration: 0.8
     };
     tl.from("[data-header-logo]", headerEffects).from("[data-header-nav1]", headerEffects).from("[data-header-nav2]", headerEffects).from("[data-header-registration]", headerEffects).from("[data-header-language]", headerEffects).from("[data-text-appear]", {
